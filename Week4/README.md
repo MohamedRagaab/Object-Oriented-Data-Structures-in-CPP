@@ -1,73 +1,59 @@
-# Week 3
-## Developign C++ Classes
-### Week 3 Quiz Degree
+# Week 4
+## Engineering C++ Software Solutions
+### Week 4 Quiz Degree
 <div align="center">
   <img src="https://user-images.githubusercontent.com/38363762/159766979-5d41dd44-20c6-421a-85d8-cac911c0b2c1.PNG">
 </div>
+![Capture1](https://user-images.githubusercontent.com/38363762/159770228-d7945f8d-c675-4e6e-8223-66854e717309.PNG)
 
-### Week 3 Challenge
-A class called Pair has already been declared, but the constructors have not been implemented yet. Pair has two public member variables:
+### Week 4 Challenge
+A base class Pair contains a single constructor Pair(a,b) that initializes the pair with the two integer arguments a and b. A derived class sumPair inherits the base class Pair, and specializes it with a new constructor sumPair(a,b) and a new variable sum.
 
-        int *pa,*pb;
+Both of these classes have already been defined.
 
-These two "pointers to int" are intended to point to heap memory locations that store integers. The remainder of the Pair class expects the following functionality.
-
-A single constructor Pair(int a, int b): This should set up pa and pb to point to newly allocated memory locations on the heap. The integers at those memory locations should be assigned values according to the constructor's integer arguments a and b.
-
-A copy constructor Pair(const Pair& other): This takes as its argument a read-only reference to another Pair. It should set up the newly constructed Pair as a "deep copy," that is, it should create a new Pair that is equivalent to the other Pair based on dereferenced values but does not reuse any of the same memory locations. In other words, the copy constructor should set up its own instance's member variables pa and pb to point to newly allocated memory locations for integers on the heap; those memory locations must be new, not the same locations pointed to by the other Pair, but the integers at these new locations should be assigned values according to the integers that the other Pair is pointing to.
-
-A destructor ~Pair() that de-allocates all of the the heap memory that had previously been allocated for this Pair's members.
-
-The types of these member functions have already been declared in the declaration of Pair. Now you need to provide the implementation of each of these three member functions.
-
-(Note: The function declarations shown in the code comment below do not include parameter names for the arguments. They show only the types of the arguments. This is allowed for a declaration, but when you define the implementation of those functions, you should give names to the parameters so that you can refer to them.)
-
+Implement the new constructor sumPair(a,b), which was declared already in class sumPair. The new constructor sumPair(a,b) should initialize the inherited class Pair with integer values a,b and set the member variable "sum"  to the sum of a and b.
 
 #### My Solution
 ```c++
-/* Class Pair has already been declared
- * as shown in the following comments:
+/* Class Pair has already been
+ * declared and defined with the
+ * following constructor:
  *
- * class Pair {
+ *   Pair(int,int)
+ *
+ * that stores its two arguments in
+ * two private member variables of Pair.
+ *
+ * Class sumPair has also already been
+ * defined as follows:
+ *
+ * class sumPair : public Pair {
  * public:
- *   int *pa,*pb;
- *   Pair(int, int);
- *   Pair(const Pair &);
- *  ~Pair();
+ *   int sum;
+ *   sumPair(int,int);
  * };
- *
- * Implement its member functions below.
+ * 
+ * Implement the constructor
+ * sumPair(int,int) such that it
+ * loads the two member variables of
+ * the base Pair class with its
+ * arguments, and initializes the
+ * member variable sum with their sum.
+ */
+  sumPair::sumPair(int a, int b) : Pair(a, b) {
+    sum = a + b;
+}
+
+
+/* Below is a main() function
+ * you can use to test your
+ * implementation of the
+ * sumPair constructor.
  */
  
-   Pair::Pair(int a, int b) {
-   pa = new int(a);
-   pb = new int(b);
- }
- 
- Pair::Pair(const Pair &other) {
-  pa = new int(*(other.pa));
-  pb = new int(*(other.pb));
- }
- 
- Pair::~Pair() {
-   delete pa; 
-   delete pb;
- }
- 
- /* Here is a main() function you can use
-  * to check your implementation of the
-  * class Pair member functions.
-  */
-  
 int main() {
-  Pair p(15,16);
-  Pair q(p);
-  Pair *hp = new Pair(23,42);
-  delete hp;
-  
-  std::cout << "If this message is printed,"
-    << " at least the program hasn't crashed yet!\n"
-    << "But you may want to print other diagnostic messages too." << std::endl;
+  sumPair sp(15,16);
+  std::cout << "sp(15,16).sum =" << sp.sum << std::endl;
   return 0;
 }
 ```
