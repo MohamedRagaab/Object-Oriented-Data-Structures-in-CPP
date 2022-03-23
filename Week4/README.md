@@ -2,9 +2,8 @@
 ## Engineering C++ Software Solutions
 ### Week 4 Quiz Degree
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/38363762/159766979-5d41dd44-20c6-421a-85d8-cac911c0b2c1.PNG">
+  <img src="https://user-images.githubusercontent.com/38363762/159770228-d7945f8d-c675-4e6e-8223-66854e717309.PNG">
 </div>
-![Capture1](https://user-images.githubusercontent.com/38363762/159770228-d7945f8d-c675-4e6e-8223-66854e717309.PNG)
 
 ### Week 4 Challenge
 A base class Pair contains a single constructor Pair(a,b) that initializes the pair with the two integer arguments a and b. A derived class sumPair inherits the base class Pair, and specializes it with a new constructor sumPair(a,b) and a new variable sum.
