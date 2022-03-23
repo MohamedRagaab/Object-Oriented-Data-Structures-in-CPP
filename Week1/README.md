@@ -4,7 +4,9 @@
 <div align="center">
   <img src="https://user-images.githubusercontent.com/38363762/159768991-361fd099-6948-4a1d-9395-7d093857c802.PNG">
 </div>
+
 ### Week 1 Quiz Degree
+
 <div align="center">
   <img src="https://user-images.githubusercontent.com/38363762/159769265-9b6d9cef-3010-4451-bf61-286e9e17c2aa.PNG">
 </div>
