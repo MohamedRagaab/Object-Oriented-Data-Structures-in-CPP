@@ -6,3 +6,6 @@ This course teaches learners how to write a program in the C++ language, includi
 <hr/>
 </div>
 
+[![GitHub issues](https://img.shields.io/github/contributors/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP)](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP)](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/network)
+[![GitHub stars](https://img.shields.io/github/stars/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP)](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/stargazers)
