@@ -23,6 +23,11 @@ This repo will contain Summaries Quizs and Programming Assignments from the [Acc
 ## About This Course
 This course teaches learners how to write a program in the C++ language, including how to set up a development environment for writing and debugging C++ code and how to implement data structures as C++ classes. It is the first course in the Accelerated CS Fundamentals specialization, and subsequent courses in this specialization will be using C++ as the language for implementing the data structures covered in class.
 
+## Content
+* [Orientation; Writing a C++ Program](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/tree/main/Week1) 
+* [Understanding the C++ Memory Model](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/tree/main/Week2) 
+* [Developing C++ Classes](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/tree/main/Week3) 
+* [Engineering C++ Software Solutions](https://github.com/MohamedRagaab/Object-Oriented-Data-Structures-in-CPP/tree/main/Week4) 
 ## 🎉🎈 Certification 
 
 ![Capture](https://user-images.githubusercontent.com/38363762/159761031-cbf6e819-78e7-41a6-bab9-1034f423cfa2.PNG)
