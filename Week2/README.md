@@ -1,73 +1,67 @@
-# Week 3
-## Developign C++ Classes
-### Week 3 Quiz Degree
+# Week 2
+## Understanding the C++ Memory Model
+### Week 2 Quiz Degree
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/38363762/159766979-5d41dd44-20c6-421a-85d8-cac911c0b2c1.PNG">
+  <img src="https://user-images.githubusercontent.com/38363762/159769785-c0cfa68c-64a7-4abd-9454-8c6f4516264d.PNG">
 </div>
 
-### Week 3 Challenge
-A class called Pair has already been declared, but the constructors have not been implemented yet. Pair has two public member variables:
+### Week 2 Challenge
 
-        int *pa,*pb;
+A class type called "Pair" has already been defined for you. You need to write a function called pairFactory that creates an instance of Pair on the heap. Do not create the object on the stack. Then, your function needs to return a pointer to that created object.
 
-These two "pointers to int" are intended to point to heap memory locations that store integers. The remainder of the Pair class expects the following functionality.
+Tips:
 
-A single constructor Pair(int a, int b): This should set up pa and pb to point to newly allocated memory locations on the heap. The integers at those memory locations should be assigned values according to the constructor's integer arguments a and b.
+- An "instance of" a class type means one variable that is created with this type. We talk this way to clearly distinguish between the class type itself and specific variables that have this class type. For example, if you declare "Pair p;" then p is an instance of Pair. Also, it is common to say that an instance of a class is an "object".
 
-A copy constructor Pair(const Pair& other): This takes as its argument a read-only reference to another Pair. It should set up the newly constructed Pair as a "deep copy," that is, it should create a new Pair that is equivalent to the other Pair based on dereferenced values but does not reuse any of the same memory locations. In other words, the copy constructor should set up its own instance's member variables pa and pb to point to newly allocated memory locations for integers on the heap; those memory locations must be new, not the same locations pointed to by the other Pair, but the integers at these new locations should be assigned values according to the integers that the other Pair is pointing to.
+- If you are stuck, please review: How do you create a variable on the stack? How do you create one on the heap?
 
-A destructor ~Pair() that de-allocates all of the the heap memory that had previously been allocated for this Pair's members.
+- If you see the server message "InfraError," it means your program crashed with a segfault, typically. In this case, it's likely you returned an invalid address. Make sure you are creating the Pair on the heap.
 
-The types of these member functions have already been declared in the declaration of Pair. Now you need to provide the implementation of each of these three member functions.
+- Pointers are variables that store memory addresses as their actual value. The pointer is said to "point to" whatever is located at the address that it stores. Returning a pointer means returning a copy of the pointer itself, that is, the address that the pointer stores, not a copy of the thing that is pointed to. 
 
-(Note: The function declarations shown in the code comment below do not include parameter names for the arguments. They show only the types of the arguments. This is allowed for a declaration, but when you define the implementation of those functions, you should give names to the parameters so that you can refer to them.)
-
-
+- Pointer variables are also located at addresses in memory, of course, but the address where the pointer is located is different from the address that it contains as its value.
 #### My Solution
 ```c++
-/* Class Pair has already been declared
- * as shown in the following comments:
- *
- * class Pair {
- * public:
- *   int *pa,*pb;
- *   Pair(int, int);
- *   Pair(const Pair &);
- *  ~Pair();
- * };
- *
- * Implement its member functions below.
- */
- 
-   Pair::Pair(int a, int b) {
-   pa = new int(a);
-   pb = new int(b);
- }
- 
- Pair::Pair(const Pair &other) {
-  pa = new int(*(other.pa));
-  pb = new int(*(other.pb));
- }
- 
- Pair::~Pair() {
-   delete pa; 
-   delete pb;
- }
- 
- /* Here is a main() function you can use
-  * to check your implementation of the
-  * class Pair member functions.
-  */
-  
+#include <iostream>
+
+// This class Pair has already been defined for you.
+// (You may not change this definition.)
+class Pair {
+public:
+  int first, second;
+  void check() {
+    first = 5;
+    std::cout << "Congratulations! The check() method of the Pair class \n has executed. (But, this isn't enough to guarantee \n that your code is correct.)" << std::endl;
+  }
+};
+
+// Insert your declaration and implementation of the function pairFactory()
+// below, by replacing "..." with proper C++ code. Be sure to declare the
+// function type to return a pointer to a Pair.
+
+ Pair* pairFactory() {
+   Pair* pair = new Pair; 
+  return pair;
+}
+
+// Your function should be able to satisfy the tests below. You should try
+// some other things to convince yourself. If you have a bug in this problem,
+// the usual symptom is that after you submit, the grader will crash with a
+// system error. :-)
+
 int main() {
-  Pair p(15,16);
-  Pair q(p);
-  Pair *hp = new Pair(23,42);
-  delete hp;
   
-  std::cout << "If this message is printed,"
-    << " at least the program hasn't crashed yet!\n"
-    << "But you may want to print other diagnostic messages too." << std::endl;
+  Pair *p;
+  p = pairFactory();
+  
+  // This function call should work without crashing:
+  p->check();
+  
+  // Deallocating the heap memory. (Assuming it was made on the heap!)
+  delete p;
+
+  std::cout << "If you can see this text, the system hasn't crashed yet!" << std::endl;  
+
   return 0;
 }
 ```
